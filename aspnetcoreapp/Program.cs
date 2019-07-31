@@ -16,7 +16,7 @@ namespace aspnetcoreapp
         {
             CreateWebHostBuilder(args).Build().Run();
         }
-
+//sample push
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>();
