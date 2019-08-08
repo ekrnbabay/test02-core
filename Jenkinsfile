@@ -3,7 +3,17 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        echo 'build! first'
+        sh 'dotnet build'
+      }
+    }
+    stage('publish') {
+      steps {
+        sh 'sudo dotnet publish -c Release -o /var/www/aspnetcoreapp'
+      }
+    }
+    stage('restart service') {
+      steps {
+        sh 'sudo service aspnetcoreapp start'
       }
     }
   }
