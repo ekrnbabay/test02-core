@@ -15,9 +15,10 @@ sudo apt-get install dotnet-sdk-2.2 -y
 #web nginx
 sudo apt-get install nginx -y
 
-#Publish project ubuntu from local dir to /var/www/aspnetcoreapp
-sudo mkdir /var/www/aspnetcoreapp
-cp aspnetcoreapp.service /etc/systemd/system/aspnetcoreapp.service
+#Publish project ubuntu from jenkins dir to /var/www/aspnetcoreapp
+sudo mkdir -p /var/www/aspnetcoreapp
+
+sudo cp ${PWD}/aspnetcoreapp.service /etc/systemd/system/aspnetcoreapp.service
 #sudo nano /etc/systemd/system/aspnetcoreapp.service
 sudo dotnet publish -c Release -o /var/www/aspnetcoreapp
 sudo systemctl enable aspnetcoreapp.service
