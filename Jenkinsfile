@@ -1,5 +1,10 @@
 pipeline {
-  agent none
+  agent {
+    node {
+      label 'lblmain'
+    }
+
+  }
   stages {
     stage('build') {
       steps {
@@ -16,5 +21,8 @@ pipeline {
         sh 'sudo service aspnetcoreapp start'
       }
     }
+  }
+  environment {
+    lblmain = 'lblmain'
   }
 }
