@@ -21,3 +21,6 @@ jenkins ALL=(ALL) NOPASSWD: ALL
 
 About setup.sh and aspnetcoreapp.service
 https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx?view=aspnetcore-2.2
+
+
+ sudo chmod -R 777 /home/ubuntu/jenkins/

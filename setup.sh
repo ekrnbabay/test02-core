@@ -27,3 +27,7 @@ sudo service aspnetcoreapp start
 
 #setup proxy nginx from port 5000
 ...
+
+setup jenkins by CLI
+
+java -jar jenkins-cli.jar -s http://18.224.44.147:8080/ help
