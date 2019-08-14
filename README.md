@@ -23,10 +23,20 @@ About setup.sh and aspnetcoreapp.service
 https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx?view=aspnetcore-2.2
 
 
+#if aspnetcoreapp service instaled? 
+sudo systemctl daemon-reload
+sudo service aspnetcoreapp stop
+
+#for Linux ubuntu
+sudo snap install docker          # version 18.06.1-ce, or
+sudo apt  install docker-compose -y
+
+#slave setupdocker ps
+cd /home/ubuntu/jenkins/workspace/aspnetcore
 
  ## Running the sample using Docker
  1)
- Need to add 3 files:
+ Need to add 3 files in project:
  .dockerignore
  docker-compose.yml
  /aspnetcoreapp/Dockerfile
@@ -34,11 +44,19 @@ https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx?view=as
  2)
 You can run the Web sample by running these commands from the root folder (where the .sln file is located):
 
-```
-    docker-compose build
-    docker-compose up
-```
+#Linux:
+sudo docker-compose build
+sudo docker-compose up -d
+
+#Windows:
+docker-compose build
+docker-compose up -d
+
 
 You should be able to make requests to localhost:5106 once these commands complete.
 
 You can also run the Web application by using the instructions located in its `Dockerfile` file in the root of the project. Again, run these commands from the root of the solution (where the .sln file is located).
+
+#Check
+curl -Is 127.0.0.1 | head -1
+curl -Is 127.0.0.1:8080 | head -1
