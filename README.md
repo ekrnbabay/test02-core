@@ -65,3 +65,8 @@ curl -Is 127.0.0.1:5000 | head -1
 git checkout release
 git pull
 git merge origin/develop
+
+
+git checkout origin/develop
+git pull
+git merge origin/release
