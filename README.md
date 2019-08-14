@@ -61,4 +61,7 @@ You can also run the Web application by using the instructions located in its `D
 curl -Is 127.0.0.1 | head -1
 curl -Is 127.0.0.1:5000 | head -1
 
-git push --set-upstream origin release
+
+git checkout release
+git pull
+git merge origin/develop
