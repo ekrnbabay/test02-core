@@ -24,7 +24,7 @@ sudo dotnet publish -c Release -o /var/www/aspnetcoreapp
 sudo systemctl enable aspnetcoreapp.service
 sudo service aspnetcoreapp start
 # service --status-all
-
+  
 #setup proxy nginx from port 5000
 ...
 
