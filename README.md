@@ -59,4 +59,6 @@ You can also run the Web application by using the instructions located in its `D
 
 #Check
 curl -Is 127.0.0.1 | head -1
-curl -Is 127.0.0.1:8080 | head -1
+curl -Is 127.0.0.1:5000 | head -1
+
+git push --set-upstream origin release
