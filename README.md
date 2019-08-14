@@ -67,6 +67,7 @@ git pull
 git merge origin/develop
 
 
-git checkout origin/develop
+git checkout origin/release
 git pull
-git merge origin/release
+git merge origin/develop
+git push
