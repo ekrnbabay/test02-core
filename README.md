@@ -69,5 +69,5 @@ git merge origin/develop
 git push
 
 but for push need generate SSH-key
-merge test 10
+merge test 11
 
