@@ -1,6 +1,10 @@
 1) #Install .Net Core for all unix
 https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install
-
+#config
+/etc/nginx/sites-available/default
+sudo service nginx stop
+#check
+curl -Is 127.0.0.1:5000 | head -1
 
 2) Launch .NET Core web application on a Ubuntu 16.04 Server
 https://www.youtube.com/watch?v=3Lq7jzACP0A
@@ -31,7 +35,7 @@ sudo service aspnetcoreapp stop
 sudo snap install docker          # version 18.06.1-ce, or
 sudo apt  install docker-compose -y
 
-#slave setupdocker ps
+#slave setup docker ps
 cd /home/ubuntu/jenkins/workspace/aspnetcore
 
  ## Running the sample using Docker
