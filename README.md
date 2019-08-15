@@ -115,8 +115,8 @@ https://github.com/ekrnbabay/test02-core.git
 
 echo 'deploy in QA docker'
 
-ssh -i /home/ubuntu/.ssh/aws_firsttest.pem ubuntu@172.31.1.20 "mkdir -p /home/ubuntu/aspnetcore"
-ssh -i /home/ubuntu/.ssh/aws_firsttest.pem ubuntu@172.31.1.20 "sudo rm -r /home/ubuntu/aspnetcore"
+ssh -i /home/ubuntu/.ssh/aws_firsttest.pem ubuntu@172.31.1.20 "mkdir -p /home/ubuntu/aspnetcore_release"
+ssh -i /home/ubuntu/.ssh/aws_firsttest.pem ubuntu@172.31.1.20 "sudo rm -r /home/ubuntu/aspnetcore_release"
 scp -i /home/ubuntu/.ssh/aws_firsttest.pem -r /home/ubuntu/jenkins/workspace/aspnetcore_release ubuntu@172.31.1.20:/home/ubuntu/
 ssh -i /home/ubuntu/.ssh/aws_firsttest.pem ubuntu@172.31.1.20 "cd /home/ubuntu/aspnetcore_release/;sudo chmod +x deployondocer.sh"
 ssh -i /home/ubuntu/.ssh/aws_firsttest.pem ubuntu@172.31.1.20 "cd /home/ubuntu/aspnetcore_release/;./deployondocer.sh"
