@@ -70,3 +70,4 @@ git push
 
 but for push need generate SSH-key
 merge test 8
+merge test 9
