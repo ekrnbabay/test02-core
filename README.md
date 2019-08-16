@@ -9,12 +9,10 @@
 ```
 
 After that will be installed 4 ubuntu 18.04 instances
+
 172.31.1.10 - jenkins master
-
 172.31.1.15 - jenkins slave
-
 172.31.1.20 - DEV server
-
 172.31.1.25 - QA server
 
 DevOps practice course plan by https://github.com/drisenberg
@@ -48,13 +46,13 @@ sudo dotnet publish -c Release -o /var/www/aspnetcoreapp
 sudo systemctl enable aspnetcoreapp.service
 sudo service aspnetcoreapp start
 ```
- # config nginx
+ ### config nginx
 ```
 /etc/nginx/sites-available/default
 sudo service nginx stop
 service --status-all
 ```
- # check aspnetcoreapp web
+ ### check aspnetcoreapp web
 ```
 curl -Is 127.0.0.1:5000 | head -1
 ```
@@ -78,23 +76,23 @@ Info about setup.sh and aspnetcoreapp.service is here
 https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx?view=aspnetcore-2.2
 
 
- # if aspnetcoreapp service instaled? 
+ ### if aspnetcoreapp service instaled? 
 ```
 sudo systemctl daemon-reload
 sudo service aspnetcoreapp stop
 ```
- # for Linux ubuntu
+ ### for Linux ubuntu
 ```
 sudo snap install docker          # version 18.06.1-ce, or
 sudo apt  install docker-compose -y
 ```
 
- # slave project folder 
+ ### slave project folder 
 ```
 cd /home/ubuntu/jenkins/workspace/aspnetcore
 ```
 
- # QA project folder
+ ### QA project folder
 ```
 /home/ubuntu/aspnetcore_release
 # added ubuntu 
@@ -109,11 +107,11 @@ sudo usermod -aG docker $USER
  
  2) You can run the Web sample by running these commands from the root folder (where the .sln file is located):
 
- # Linux:
+ ### Linux:
 sudo docker-compose build
 sudo docker-compose up -d
 
- # Windows:
+ ### Windows:
 ```
 docker-compose build
 docker-compose up -d
