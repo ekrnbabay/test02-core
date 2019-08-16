@@ -1,6 +1,6 @@
-##1) [Install .Net Core for all unix]https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install
+ ##[Install .Net Core for all unix]https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install
 
-##2) [Launch .NET Core web application on a Ubuntu 16.04 Server]https://www.youtube.com/watch?v=3Lq7jzACP0A
+ ##[Launch .NET Core web application on a Ubuntu 16.04 Server]https://www.youtube.com/watch?v=3Lq7jzACP0A
 ```
 sudo mkdir -p /var/www/aspnetcoreapp
 sudo cp ${PWD}/aspnetcoreapp.service /etc/systemd/system/aspnetcoreapp.service
@@ -9,15 +9,18 @@ sudo dotnet publish -c Release -o /var/www/aspnetcoreapp
 sudo systemctl enable aspnetcoreapp.service
 sudo service aspnetcoreapp start
 ```
-#config nginx
+ #config nginx
+```
 /etc/nginx/sites-available/default
 sudo service nginx stop
 service --status-all
-#check aspnetcoreapp web
+```
+ #check aspnetcoreapp web
+```
 curl -Is 127.0.0.1:5000 | head -1
+```
 
-
-##3) Jenkins user right for sudo command
+ ## Jenkins user right for sudo command
 https://gist.github.com/hayderimran7/9246dd195f785cf4783d
 
 1. On ubuntu based systems, run " $ sudo visudo "
@@ -30,25 +33,31 @@ jenkins ALL=(ALL) NOPASSWD: ALL
 6. Relaunch your jenkins job 
 7. you shouldnt see that error message again :)
 
-About setup.sh and aspnetcoreapp.service
-https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx?view=aspnetcore-2.2
+[info about setup.sh and aspnetcoreapp.service is here]https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx?view=aspnetcore-2.2
 
 
-#if aspnetcoreapp service instaled? 
+ #if aspnetcoreapp service instaled? 
+```
 sudo systemctl daemon-reload
 sudo service aspnetcoreapp stop
-
-#for Linux ubuntu
+```
+ #for Linux ubuntu
+```
 sudo snap install docker          # version 18.06.1-ce, or
 sudo apt  install docker-compose -y
+```
 
-#slave setup docker ps
+ #slave project folder 
+```
 cd /home/ubuntu/jenkins/workspace/aspnetcore
+```
 
-#QA project folder
+ #QA project folder
+```
 /home/ubuntu/aspnetcore_release
-
+# added ubuntu 
 sudo usermod -aG docker $USER
+```
 
  ## Running the sample using Docker
  1)
@@ -65,27 +74,28 @@ sudo docker-compose build
 sudo docker-compose up -d
 
 #Windows:
+```
 docker-compose build
 docker-compose up -d
+```
 
-```
-You should be able to make requests to localhost:5106 once these commands complete.
-```
+You should be able to make requests to localhost:5000 once these commands complete.
+
 You can also run the Web application by using the instructions located in its `Dockerfile` file in the root of the project. Again, run these commands from the root of the solution (where the .sln file is located).
 
-
 Git merge
+```
 git checkout release
 git pull
 git merge origin/develop
 git push
-
+```
 but for push need generate SSH-key
 
 ## jenkins 3 jobs:
 #
 1) aspnetcore
-https://github.com/ekrnbabay/test02-core.git
+
 ```
 dotnet build
 
