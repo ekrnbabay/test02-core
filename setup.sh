@@ -31,3 +31,6 @@ sudo service aspnetcoreapp start
 setup jenkins by CLI
 
 java -jar jenkins-cli.jar -s http://18.224.44.147:8080/ help
+
+#setup docker
+sudo docker info

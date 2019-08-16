@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  aspnetcoreapp:
+    image: aspnetcoreapp
+    build:
+      context: .
+      dockerfile: aspnetcoreapp/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5000:80" # the aspnetcore container sets 80 as the default port

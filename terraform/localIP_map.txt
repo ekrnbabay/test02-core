@@ -1,0 +1,7 @@
+
+env1
+172.31.1.10 - jenkins master
+172.31.1.15 - jenkins slave
+
+172.31.1.20 - dev
+172.31.1.25 - qa
