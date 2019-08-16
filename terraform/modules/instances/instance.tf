@@ -15,7 +15,7 @@ variable "VPC_ID" {}
 variable "PUBLIC_SUBNET" {}
 
 variable "KEYPATH" {
-	default = "C:\\testdoc\\AWS\\aws_firsttest.pem"
+	default = "yourpath\\aws_firsttest.pem"
 }
 
 resource "aws_security_group" "allow_ssh_new" {
@@ -65,7 +65,7 @@ resource "aws_security_group" "allow_ssh_new" {
     Environmnent = "${var.ENV}"
   }
 }
-
+#LF clear ubuntu image
 data "aws_ami" "ubuntu" {
   most_recent = true
 
@@ -115,21 +115,21 @@ resource "aws_network_interface" "jenmaster" {
 resource "aws_network_interface" "jenslave" {
   subnet_id = var.PUBLIC_SUBNET
   private_ips = ["172.31.1.15"]
-  #security_group_id = ["${aws_security_group.allow_ssh_new.id}"]
+
   security_groups = ["${aws_security_group.allow_ssh_new.id}"]
 
 }
 resource "aws_network_interface" "netqa" {
   subnet_id = var.PUBLIC_SUBNET
   private_ips = ["172.31.1.20"]
-  #security_group_id = ["${aws_security_group.allow_ssh_new.id}"]
+
   security_groups = ["${aws_security_group.allow_ssh_new.id}"]
 
 }
 resource "aws_network_interface" "netdev" {
   subnet_id = var.PUBLIC_SUBNET
   private_ips = ["172.31.1.25"]
-  #security_group_id = ["${aws_security_group.allow_ssh_new.id}"]
+
   security_groups = ["${aws_security_group.allow_ssh_new.id}"]
 
 }
