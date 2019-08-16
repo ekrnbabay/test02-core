@@ -10,12 +10,15 @@
 
 After that will be installed 4 ubuntu 18.04 instances
 172.31.1.10 - jenkins master
+
 172.31.1.15 - jenkins slave
 
 172.31.1.20 - DEV server
+
 172.31.1.25 - QA server
 
 DevOps practice course plan by https://github.com/drisenberg
+
 2.	Create 4 new Linux servers by Terraform. Two servers for Jenkins CI master and slave. Two servers for QA and DEV environments.
 3.	Create Github repo for the project.
 4.	Configure Jenkins master and slave. Connect to Github repo.
@@ -64,6 +67,7 @@ https://gist.github.com/hayderimran7/9246dd195f785cf4783d
 3. If your jenkins user is already in that file, then modify to look like this:
 
 jenkins ALL=(ALL) NOPASSWD: ALL
+
 4. save the file by doing Ctrl+O  (dont save in tmp file. save in /etc/sudoers, confirm overwrite)
 5. Exit by doing Ctrl+X
 6. Relaunch your jenkins job 
