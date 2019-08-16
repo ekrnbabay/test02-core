@@ -31,10 +31,12 @@ DevOps practice course plan by https://github.com/drisenberg
 
 
 
- ## [Install .Net Core for all unix]:https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install
+ ## Install .Net Core for all unix
+ https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install
 
 
- ## [Launch .NET Core web application on a Ubuntu 16.04 Server]:https://www.youtube.com/watch?v=3Lq7jzACP0A
+ ## Launch .NET Core web application on a Ubuntu 16.04 Server
+ https://www.youtube.com/watch?v=3Lq7jzACP0A
 ```
 sudo mkdir -p /var/www/aspnetcoreapp
 sudo cp ${PWD}/aspnetcoreapp.service /etc/systemd/system/aspnetcoreapp.service
@@ -67,8 +69,9 @@ jenkins ALL=(ALL) NOPASSWD: ALL
 6. Relaunch your jenkins job 
 7. you shouldnt see that error message again :)
 
-[info about setup.sh and aspnetcoreapp.service is here]
-[info about setup.sh and aspnetcoreapp.service is here]:https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx?view=aspnetcore-2.2
+
+Info about setup.sh and aspnetcoreapp.service is here
+https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx?view=aspnetcore-2.2
 
 
  # if aspnetcoreapp service instaled? 
