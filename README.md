@@ -1,3 +1,36 @@
+ ##  AWS-Terraform-Jenkins for .Net Core 2.2 project
+ Start from terraform/dev folder. Backend "s3" "tera.Lab8_PRJ02_DEV"
+
+ ```
+ !bash
+ cd terraform/dev
+ terraform init
+ terraform apply
+```
+
+After that will be installed 4 ubuntu 18.04 instances
+172.31.1.10 - jenkins master
+172.31.1.15 - jenkins slave
+
+172.31.1.20 - DEV server
+172.31.1.25 - QA server
+
+DevOps practice course plan by https://github.com/drisenberg
+2.	Create 4 new Linux servers by Terraform. Two servers for Jenkins CI master and slave. Two servers for QA and DEV environments.
+3.	Create Github repo for the project.
+4.	Configure Jenkins master and slave. Connect to Github repo.
+5.	Add Jenkins configuration to TF. Re-create Jenkins master and slave servers by TF.
+6.	Configure DEV and QA servers. 
+7.	Install Docker to QA server.
+8.	Add all needed stuff to TF and re-create DEV and QA servers by TF.
+9.	Create develop and release branches in Github.
+10.	Configure build of the develop branch in Jenkins.
+11.	Deploy the app to DEV env by Jenkins.
+12.	If deploy works merge changed to release branch.
+13.	If deploy is successful start QA env from Jenkins and deploy the release branch to QA env. The app should be deployed to QA server as a Docker container.
+
+
+
  ## [Install .Net Core for all unix]:https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install
 
 
