@@ -1,17 +1,23 @@
-1) #Install .Net Core for all unix
-https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install
-#config
+##1) [Install .Net Core for all unix]https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install
+
+##2) [Launch .NET Core web application on a Ubuntu 16.04 Server]https://www.youtube.com/watch?v=3Lq7jzACP0A
+```
+sudo mkdir -p /var/www/aspnetcoreapp
+sudo cp ${PWD}/aspnetcoreapp.service /etc/systemd/system/aspnetcoreapp.service
+#sudo nano /etc/systemd/system/aspnetcoreapp.service
+sudo dotnet publish -c Release -o /var/www/aspnetcoreapp
+sudo systemctl enable aspnetcoreapp.service
+sudo service aspnetcoreapp start
+```
+#config nginx
 /etc/nginx/sites-available/default
 sudo service nginx stop
 service --status-all
-#check
+#check aspnetcoreapp web
 curl -Is 127.0.0.1:5000 | head -1
 
-2) Launch .NET Core web application on a Ubuntu 16.04 Server
-https://www.youtube.com/watch?v=3Lq7jzACP0A
 
-
-3) Jenkins user right for sudo command
+##3) Jenkins user right for sudo command
 https://gist.github.com/hayderimran7/9246dd195f785cf4783d
 
 1. On ubuntu based systems, run " $ sudo visudo "
@@ -67,25 +73,20 @@ You should be able to make requests to localhost:5106 once these commands comple
 ```
 You can also run the Web application by using the instructions located in its `Dockerfile` file in the root of the project. Again, run these commands from the root of the solution (where the .sln file is located).
 
-#Check
-curl -Is 127.0.0.1 | head -1
-curl -Is 127.0.0.1:5000 | head -1
 
-
-
+Git merge
 git checkout release
 git pull
 git merge origin/develop
 git push
 
 but for push need generate SSH-key
-merge test 12
 
-jenkins 3 jobs:
+## jenkins 3 jobs:
 #
 1) aspnetcore
 https://github.com/ekrnbabay/test02-core.git
-
+```
 dotnet build
 
 ssh -i /home/ubuntu/.ssh/aws_firsttest.pem ubuntu@172.31.1.25 "mkdir -p /home/ubuntu/aspnetcore"
@@ -93,12 +94,11 @@ ssh -i /home/ubuntu/.ssh/aws_firsttest.pem ubuntu@172.31.1.25 "sudo rm -r /home/
 scp -i /home/ubuntu/.ssh/aws_firsttest.pem -r /home/ubuntu/jenkins/workspace/aspnetcore ubuntu@172.31.1.25:/home/ubuntu/
 ssh -i /home/ubuntu/.ssh/aws_firsttest.pem ubuntu@172.31.1.25 "cd /home/ubuntu/aspnetcore/;sudo chmod +x deployprj.sh"
 ssh -i /home/ubuntu/.ssh/aws_firsttest.pem ubuntu@172.31.1.25 "cd /home/ubuntu/aspnetcore/;./deployprj.sh"
-
+```
 #
 2) aspnetcore_merge
-Projects to watch	aspnetcore
 
-
+```
 rm -rf test02-core
 
 git clone git@github.com:ekrnbabay/test02-core.git -b develop
@@ -108,11 +108,10 @@ git checkout release
 git pull
 git merge origin/develop
 git push
-
+```
 #
 3) aspnetcore_release
-https://github.com/ekrnbabay/test02-core.git
-
+```
 echo 'deploy in QA docker'
 
 ssh -i /home/ubuntu/.ssh/aws_firsttest.pem ubuntu@172.31.1.20 "mkdir -p /home/ubuntu/aspnetcore_release"
@@ -120,3 +119,4 @@ ssh -i /home/ubuntu/.ssh/aws_firsttest.pem ubuntu@172.31.1.20 "sudo rm -r /home/
 scp -i /home/ubuntu/.ssh/aws_firsttest.pem -r /home/ubuntu/jenkins/workspace/aspnetcore_release ubuntu@172.31.1.20:/home/ubuntu/
 ssh -i /home/ubuntu/.ssh/aws_firsttest.pem ubuntu@172.31.1.20 "cd /home/ubuntu/aspnetcore_release/;sudo chmod +x deployondocer.sh"
 ssh -i /home/ubuntu/.ssh/aws_firsttest.pem ubuntu@172.31.1.20 "cd /home/ubuntu/aspnetcore_release/;./deployondocer.sh"
+```
